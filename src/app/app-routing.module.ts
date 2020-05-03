@@ -4,6 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [];
 
+//   { path: '', component: FirstComponent, data: { title: 'Infrastructures' } },
+//   { path: 'infrastructures', component: InfrastructuresComponent, data: { title: 'Infrastructures' } },
+//   { path: 'devices', component: DevicesComponent, data: { title: 'Devices' } }
+// ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

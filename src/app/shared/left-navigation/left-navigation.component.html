@@ -1,0 +1,28 @@
+<div class="display-area">
+<mat-toolbar color="accent" class="example-toolbar">
+  <button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
+  <!-- <h1 class="example-app-name">Menus</h1> -->
+</mat-toolbar>
+
+<mat-sidenav-container autosize class="app-side-container">
+  <mat-sidenav mode="side" opened="true" disableClose="true">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/infrastructures" routerLinkActive="active-component" 
+          title="infrastructures" >
+          <mat-icon>account_balance</mat-icon>
+        <p matLine *ngIf="isExpanded">Infrastructures</p>
+      </a>
+      <a mat-list-item routerLink="/devices" routerLinkActive="active-component"
+      title="devices">
+        <mat-icon>web_asset</mat-icon>
+        <p matLine *ngIf="isExpanded">Devices</p>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <p>
+      <ng-content></ng-content>
+    </p> 
+  </mat-sidenav-content>
+</mat-sidenav-container>
+</div>
