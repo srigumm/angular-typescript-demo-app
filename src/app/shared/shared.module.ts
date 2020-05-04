@@ -3,11 +3,13 @@ import {CommonModule} from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { MaterialModule } from './material.module';
 import { LeftNavigationComponent } from './left-navigation/left-navigation.component';
-import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module';
 @NgModule({
     imports:[
         MaterialModule,
         CommonModule,
+    AppRoutingModule,
+
     ],
     declarations:[
         HeaderComponent,
