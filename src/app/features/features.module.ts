@@ -5,6 +5,7 @@ import { ListInfrastructuresComponent } from './infrastructure/list-infrastructu
 import { ListDeviceComponent } from './device/list-device/list-device.component';
 import { InfrastructureModule } from './infrastructure/infrastructure.module';
 import { DeviceModule } from './device/device.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
     CommonModule,
     InfrastructureModule,
     DeviceModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    SharedModule
   ],
   exports:[
     RouterModule

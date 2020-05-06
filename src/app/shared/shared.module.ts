@@ -4,12 +4,13 @@ import { HeaderComponent } from './header/header.component';
 import { MaterialModule } from './material.module';
 import { LeftNavigationComponent } from './left-navigation/left-navigation.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
     imports:[
         MaterialModule,
         CommonModule,
-    AppRoutingModule,
-
+        AppRoutingModule,
+        HttpClientModule
     ],
     declarations:[
         HeaderComponent,
@@ -17,7 +18,8 @@ import { AppRoutingModule } from '../app-routing.module';
     ],
     exports:[
         HeaderComponent,
-        LeftNavigationComponent
+        LeftNavigationComponent,
+        MaterialModule
     ]
 })
 export class SharedModule{}
