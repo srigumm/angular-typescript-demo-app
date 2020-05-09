@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SvgiconsService} from './shared/common/svgicons.service'
+import { PreInitService } from './shared/config/app-settings.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,9 +12,10 @@ export class AppComponent implements OnInit {
   /**
    *
    */
-  constructor(private iconService: SvgiconsService) {
+  constructor(private iconService: SvgiconsService, private preInitService: PreInitService) {
   }
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.iconService.init();
+    await this.preInitService.onInit();
   }
 }

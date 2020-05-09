@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppSettingsService } from 'src/app/shared/config/app-settings.service';
 
 @Component({
   selector: 'app-list-infrastructures',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListInfrastructuresComponent implements OnInit {
 
-  constructor() { }
+  constructor(private appSettingsService: AppSettingsService) { }
 
   ngOnInit(): void {
+    console.log(this.appSettingsService.getSettings().appSettings.apiEndpoints.device);
   }
 
 }
