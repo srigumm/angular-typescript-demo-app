@@ -12,10 +12,9 @@ export class AppComponent implements OnInit {
   /**
    *
    */
-  constructor(private iconService: SvgiconsService, private preInitService: PreInitService) {
+  constructor(private iconService: SvgiconsService) {
   }
-  async ngOnInit(): Promise<void> {
+  ngOnInit(): void {
     this.iconService.init();
-    await this.preInitService.onInit();
   }
 }

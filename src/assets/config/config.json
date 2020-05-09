@@ -1,7 +1,7 @@
 {
     "appSettings":{
         "apiEndpoints":{
-            "infrastructures":"https://test.bettad.xyz/infrastructures/",
+            "infrastructures":"https://test.bettad.xyz/infrastructures",
             "device":"https://test.bettad.xyz/device/"
         }
     }

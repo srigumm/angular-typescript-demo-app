@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AppSettingsService } from 'src/app/shared/config/app-settings.service';
+import { InfrastructureService } from '../infrastructure.service';
+import { map } from 'rxjs/operators';
+import { Infrastructure } from '../infrastructure.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list-infrastructures',
@@ -8,10 +12,11 @@ import { AppSettingsService } from 'src/app/shared/config/app-settings.service';
 })
 export class ListInfrastructuresComponent implements OnInit {
 
-  constructor(private appSettingsService: AppSettingsService) { }
+  public infrastructures: Observable<Infrastructure[]>;
+  constructor(
+    private infrastructureService: InfrastructureService) { }
 
   ngOnInit(): void {
-    console.log(this.appSettingsService.getSettings().appSettings.apiEndpoints.device);
+    this.infrastructures = this.infrastructureService.getInfrastructures();
   }
-
 }

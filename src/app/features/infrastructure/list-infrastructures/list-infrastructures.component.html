@@ -1,2 +1,11 @@
-<p>list-infrastructures works!</p>
-<mat-icon svgIcon="infrastructures" class="infrastructure-icon"></mat-icon>
+<div class="listInfraContainer">
+    <div *ngIf="infrastructures | async; let data">
+        <h2>Number of infrastructures: {{data.length}}</h2>
+        <div *ngFor="let infra of data">
+            <p>Infrastructure Id: <b>{{infra?.infrastructure_id}}</b></p> 
+            <p>Infrastructure Name: <b>{{infra?.infrastructure_name}} </b></p>
+        </div>
+    </div>
+    <mat-icon svgIcon="infrastructures" class="infrastructure-icon"></mat-icon>
+</div>
+
