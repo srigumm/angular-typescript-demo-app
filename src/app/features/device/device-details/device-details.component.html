@@ -1,0 +1,9 @@
+<div *ngIf="deviceInfo | async; let data">
+    <p>Device Id: <b>{{data?.device_id}} </b></p>
+    <p>Device Name: <b>{{data?.device_name}} </b></p>
+    <p>Device Type: <b>{{data?.device_type}} </b></p>
+    <p>Device Power: <b>{{data?.device_power}} </b></p>
+    <p>Device Value: <b>{{data?.device_value}} </b></p>
+    <p>Device State: <b>{{data?.device_state}} </b></p>
+    <p>Device Topic: <b>{{data?.device_topic}} </b></p>
+</div>

@@ -4,6 +4,7 @@
         <div *ngFor="let infra of data">
             <p>Infrastructure Id: <b>{{infra?.infrastructure_id}}</b></p> 
             <p>Infrastructure Name: <b>{{infra?.infrastructure_name}} </b></p>
+            <a [routerLink]="['/infrastructures', infra?.infrastructure_id, 'devices']" routerLinkActive="active-component">View Devices</a>
         </div>
     </div>
     <mat-icon svgIcon="infrastructures" class="infrastructure-icon"></mat-icon>

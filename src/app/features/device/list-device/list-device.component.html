@@ -1,2 +1,18 @@
-<p>list-device works!</p>
-<mat-icon svgIcon="devices" class="device-icon"></mat-icon>
+<div class="listInfraDevicesContainer">
+    <div *ngIf="devices | async; let data">
+        <h2>Number of Devices: {{data.length}}</h2>
+        <div *ngFor="let device of data">
+            <hr/>
+            <div>
+                Device Id: <a [routerLink]="['/device', device?.device_id]" routerLinkActive="active-component">{{device?.device_id}}</a>
+            </div> 
+            <p>Device Name: <b>{{device?.device_name}} </b></p>
+            <p>Device Type: <b>{{device?.device_type}} </b></p>
+            <p>Device Power: <b>{{device?.device_power}} </b></p>
+            <p>Device Value: <b>{{device?.device_value}} </b></p>
+            <p>Device State: <b>{{device?.device_state}} </b></p>
+            <p>Device Topic: <b>{{device?.device_topic}} </b></p>
+        </div>
+    </div>
+    <mat-icon svgIcon="devices" class="devices-icon"></mat-icon>
+</div>

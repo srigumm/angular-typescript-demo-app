@@ -6,13 +6,14 @@ import { ListDeviceComponent } from './device/list-device/list-device.component'
 import { InfrastructureModule } from './infrastructure/infrastructure.module';
 import { DeviceModule } from './device/device.module';
 import { SharedModule } from '../shared/shared.module';
+import { DeviceDetailsComponent } from './device/device-details/device-details.component';
 
 
 const routes: Routes = [
   { path: 'infrastructures', component: ListInfrastructuresComponent, pathMatch: 'full' },
   { path: 'infrastructures/:id', component: ListInfrastructuresComponent, pathMatch: 'full' },//, canActivate: [AuthGuardService]
-  { path: 'devices', component: ListDeviceComponent, pathMatch: 'full' },
-  { path: 'devices/:id', component: ListDeviceComponent, pathMatch: 'full',}, //canDeactivate: [CanDeactivateGuard]
+  { path: 'infrastructures/:id/devices', component: ListDeviceComponent, pathMatch: 'full' },
+  { path: 'device/:id', component: DeviceDetailsComponent, pathMatch: 'full',}, //canDeactivate: [CanDeactivateGuard]
   { path: '', redirectTo: '/infrastructures', pathMatch: 'full' },
   { path: '**', redirectTo: '/infrastructures' },
 ];
@@ -25,7 +26,7 @@ const routes: Routes = [
     InfrastructureModule,
     DeviceModule,
     RouterModule.forChild(routes),
-    SharedModule
+    SharedModule,
   ],
   exports:[
     RouterModule
