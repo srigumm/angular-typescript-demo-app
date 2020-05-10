@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DeviceService } from '../device.service';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { Device } from '../device.model';
 import { ActivatedRoute } from '@angular/router';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-device-details',
@@ -12,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class DeviceDetailsComponent implements OnInit {
 
   public deviceInfo: Observable<Device>
+  public errorObject: any;
   constructor(
     private deviceApiService: DeviceService,
     private route: ActivatedRoute
@@ -20,6 +22,11 @@ export class DeviceDetailsComponent implements OnInit {
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id');
     console.log("Displyaing  device details of ",id);
-    this.deviceInfo = this.deviceApiService.getDeviceDetails(id);
+    this.deviceInfo = this.deviceApiService.getDeviceDetails(id).pipe(
+      catchError(err => {
+        this.errorObject = err;
+        return throwError(err);
+      })
+    );
   }
 }

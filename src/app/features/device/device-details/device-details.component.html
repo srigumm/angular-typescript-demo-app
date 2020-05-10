@@ -1,4 +1,4 @@
-<div *ngIf="deviceInfo | async; let data">
+<div *ngIf="deviceInfo | async; let data; else loadingOrError">
     <p>Device Id: <b>{{data?.device_id}} </b></p>
     <p>Device Name: <b>{{data?.device_name}} </b></p>
     <p>Device Type: <b>{{data?.device_type}} </b></p>
@@ -7,3 +7,18 @@
     <p>Device State: <b>{{data?.device_state}} </b></p>
     <p>Device Topic: <b>{{data?.device_topic}} </b></p>
 </div>
+<ng-template #loadingOrError> 
+    <ng-container *ngIf="errorObject; else loading">
+        <div class="col-12 text-center">
+          <div class="alert alert-danger">
+            <!-- {{ errorObject }} -->
+            Error while retrieving device details.
+          </div>
+        </div>
+      </ng-container>    
+</ng-template>
+<ng-template #loading>
+    <div class="col-12 text-center">
+      Loading ...
+    </div>
+</ng-template>
