@@ -1,0 +1,52 @@
+{
+  "message": "Device details",
+  "response": {
+    "device_groups": [
+      {
+        "device_room": "Test Room",
+        "device_sensors": [
+          {
+            "device_id": "1",
+            "device_name": "Fan",
+            "device_type": "FAN",
+            "device_power": 100.0,
+            "device_value": "40",
+            "device_state": false,
+            "device_topic": "device/excited/1"
+          },
+          {
+            "device_id": "2",
+            "device_name": "Socket",
+            "device_type": "SWITCH",
+            "device_power": 150.0,
+            "device_value": "0",
+            "device_state": false,
+            "device_topic": "device/excited/2"
+          },
+          {
+            "device_id": "3",
+            "device_name": "Tubelight",
+            "device_type": "LIGHT",
+            "device_power": 40.0,
+            "device_value": "40",
+            "device_state": true,
+            "device_topic": "device/excited/3"
+          },
+          {
+            "device_id": "4",
+            "device_name": "Air Conditioner",
+            "device_type": "AC",
+            "device_power": 200.0,
+            "device_value": "40",
+            "device_state": true,
+            "device_topic": "device/excited/4"
+          }
+        ],
+        "device_count": 4
+      }
+    ],
+    "device_total": 66,
+    "device_active": 19
+  },
+  "response_code": 200
+}

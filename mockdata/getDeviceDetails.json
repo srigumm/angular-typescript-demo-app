@@ -1,0 +1,13 @@
+{
+  "message": "Device status",
+  "response": {
+    "device_id": "1",
+    "device_name": "Fan",
+    "device_type": "FAN",
+    "device_power": 100.0,
+    "device_value": "40",
+    "device_state": false,
+    "device_topic": "device/excited/1"
+  },
+  "response_code": 200
+}
